@@ -1,0 +1,51 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+
+\title{LaTeX Document with Bibliography}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+This document demonstrates how to use citations and create a bibliography in LaTeX. According to \cite{knuth1984texbook}, LaTeX is a powerful typesetting system.
+
+\section{Background}
+
+The development of computer science has been well documented \cite{turing1936computable}. Modern research continues to build on these foundations \cite{dijkstra1968goto}.
+
+\section{Methodology}
+
+Our approach follows established practices in the field \cite{knuth1984texbook, dijkstra1968goto}.
+
+\section{Conclusion}
+
+This example shows how to integrate citations naturally into your text. See \cite{turing1936computable} for more details.
+
+\begin{thebibliography}{9}
+
+\bibitem{knuth1984texbook}
+Donald E. Knuth.
+\textit{The TeXbook}.
+Addison-Wesley Professional, 1984.
+
+\bibitem{turing1936computable}
+Alan M. Turing.
+On computable numbers, with an application to the Entscheidungsproblem.
+\textit{Proceedings of the London Mathematical Society}, 42(2):230--265, 1936.
+
+\bibitem{dijkstra1968goto}
+Edsger W. Dijkstra.
+Go to statement considered harmful.
+\textit{Communications of the ACM}, 11(3):147--148, 1968.
+
+\end{thebibliography}
+
+\end{document}

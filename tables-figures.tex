@@ -1,0 +1,99 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+
+\title{LaTeX Tables and Figures Examples}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+This document demonstrates how to create tables and include figures in LaTeX documents.
+
+\section{Tables}
+
+\subsection{Basic Table}
+
+Table~\ref{tab:basic} shows a simple example of a table in LaTeX.
+
+\begin{table}[H]
+\centering
+\caption{Basic table example}
+\label{tab:basic}
+\begin{tabular}{lcc}
+\toprule
+Item & Quantity & Price \\
+\midrule
+Apples & 5 & \$2.50 \\
+Oranges & 3 & \$1.80 \\
+Bananas & 7 & \$3.15 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Advanced Table}
+
+Table~\ref{tab:advanced} shows a more complex table with multiple columns.
+
+\begin{table}[H]
+\centering
+\caption{Comparison of programming languages}
+\label{tab:advanced}
+\begin{tabular}{lccc}
+\toprule
+Language & Year & Type & Performance \\
+\midrule
+C & 1972 & Compiled & High \\
+Python & 1991 & Interpreted & Medium \\
+Java & 1995 & Compiled & High \\
+JavaScript & 1995 & Interpreted & Medium \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Figure Examples}
+
+\subsection{Figure Placeholder}
+
+When you have actual image files, you can include them as shown below. For now, we'll describe the structure.
+
+% Uncomment and use when you have an actual image file:
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.8\textwidth]{example-image}
+% \caption{Example figure}
+% \label{fig:example}
+% \end{figure}
+
+To include a figure, use:
+\begin{verbatim}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{filename}
+\caption{Your caption here}
+\label{fig:yourlabel}
+\end{figure}
+\end{verbatim}
+
+\subsection{Referencing}
+
+You can reference tables and figures using their labels. For example:
+\begin{itemize}
+    \item See Table~\ref{tab:basic} for basic data
+    \item Refer to Table~\ref{tab:advanced} for language comparison
+\end{itemize}
+
+\section{Conclusion}
+
+This document provides templates for creating tables and including figures in LaTeX documents.
+
+\end{document}
