@@ -1,0 +1,227 @@
+\documentclass{beamer}
+
+% ----- Encoding & fonts (must come first) -----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{bookmark}
+
+% ----- Language (polish) -----
+\usepackage[polish]{babel}
+
+% ----- Theme -----
+\usetheme{Madrid}
+\usecolortheme{default}
+
+% ----- Notes -----
+\usepackage{pgfpages}
+\setbeameroption{show notes on second screen=right}
+
+% ----- Math + TikZ + PGF -----
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, shapes.geometric, positioning, calc, decorations.pathreplacing}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% ----- Title -----
+\title{Wartość bezwzględna}
+\author{}
+\date{}
+
+\begin{document}
+
+% ---------- TITLE SLIDE ----------
+\begin{frame}
+    \titlepage
+    \note{
+        Przywitaj się z grupą, zapytaj jak minął dzień. Przedstaw się, zrób to na wesoło. :-) 
+        Zapytaj się czy wiedzą coś na temat wartości bezwzględnej.
+        
+    }
+\end{frame}
+
+% ---------- FRAME 1 ----------
+\begin{frame}{Wartość bezwzględna jako odległość od zera}
+Interpretacja geometryczna:
+\[
+|x| = \text{odległość punktu } x \text{ od } 0 \text{ na osi liczbowej}.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2, every node/.style={font=\normalsize}]
+  % Number line with arrow
+  \draw[-{Latex[length=3mm]}, line width=1.2pt] (-5.5,0) -- (5.5,0);
+  
+  % Tick marks and labels
+  \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}{
+    \draw[line width=0.8pt] (\x,0.1) -- (\x,-0.1) node[below=4pt] {$\x$};
+  }
+  
+  % Zero point (emphasized)
+  \draw[line width=0.8pt] (0,0.1) -- (0,-0.1);
+  \filldraw[black] (0,0) circle (2.5pt) node[above=8pt] {$\mathbf{0}$};
+  
+  % Points x and -x
+  \coordinate (P) at (3,0);
+  \coordinate (N) at (-3,0);
+  \filldraw[blue!70!black] (P) circle (3pt) node[above=8pt] {$\mathbf{x}$};
+  \filldraw[red!70!black] (N) circle (3pt) node[above=8pt] {$\mathbf{-x}$};
+  
+  % Distance arrows with labels
+  \draw[<->, line width=1.5pt, blue!70!black] (0,-0.8) -- (3,-0.8) 
+    node[midway, below=4pt, fill=white, inner sep=2pt] {$|x|=3$};
+  \draw[<->, line width=1.5pt, red!70!black] (-3,-0.8) -- (0,-0.8) 
+    node[midway, below=4pt, fill=white, inner sep=2pt] {$|-x|=3$};
+  
+  % Decorative brace
+  \draw[decorate, decoration={brace, amplitude=8pt, mirror}, line width=1pt]
+    (0,1.2) -- (3,1.2) node[midway, above=10pt] {\textbf{odległość od 0}};
+  \draw[decorate, decoration={brace, amplitude=8pt, mirror}, line width=1pt]
+    (-3,1.2) -- (0,1.2) node[midway, above=10pt] {\textbf{odległość od 0}};
+\end{tikzpicture}
+\end{center}
+
+Wartość bezwzględna liczby rzeczywistej $x$ to:
+\[
+|x| = 
+\begin{cases}
+x, & x \ge 0,\\
+-x, & x < 0.
+\end{cases}
+\]
+
+\note{
+Powiedz tutaj o wartości bezwzględnej jako odległości od zera. Zadaj najpierw pytania o odległość liczby 5 oraz -5 od zera itd. Następnie pokaż jak to się przekłada na znak minus gdy liczba jest ujemna itd.
+}
+
+\end{frame}
+
+% ---------- FRAME 2 ----------
+\begin{frame}{Wartość bezwzględna jako odległość od punktu $a$}
+Wyrażenie $|x - a|$ oznacza odległość punktu $x$ od punktu $a$.
+
+\[
+|x-a| = \text{odległość między } x \text{ i } a.
+\]
+
+\[
+|x-a| = 
+\begin{cases}
+x-a, & x \ge a,\\
+a-x, & x < a.
+\end{cases}
+\]
+
+\note{
+Powiedz tutaj o wartości bezwzględnej jako odległości od od liczby $|x-a|$. Wytłumacz jak to działa.
+}
+\end{frame}
+
+% ---------- FRAME 3 ----------
+\begin{frame}{Proste równania i nierówności z wartością bezwzględną}
+\textbf{Przykład równania:}
+\[
+|x-3| = 5
+\]
+%Daje dwa rozwiązania:
+%\[
+%x - 3 = 5 \quad \text{lub} \quad x - 3 = -5
+%\]
+%\[
+%x = 8 \quad \text{lub} \quad x = -2
+%\]
+
+\textbf{Przykłady nierówności:}
+
+$$|x-2| < 4$$
+oraz:
+$$|x+1| > 5$$
+%co oznacza:
+%\[
+%-4 < x-2 < 4
+%\]
+%\[
+%-2 < x < 6
+%\]
+\end{frame}
+
+% ---------- FRAME 4 ----------
+\begin{frame}{Trudniejsze przykłady}
+\[
+|x-1| + |x+2| = 7
+\]
+
+Rozwiązujemy, rozpatrując przedziały wyznaczone przez punkty $-2$ i $1$.
+
+\bigskip
+
+\[
+|2x - 3| \ge |x + 1|
+\]
+
+Podnosimy obie strony do kwadratu lub rozważamy przypadki.
+\end{frame}
+
+% ---------- FRAME 5 ----------
+\begin{frame}{Zadanie tekstowe — wartość bezwzględna}
+\textbf{Treść:}
+
+Szosa z Zakopanego do Gdańska prowadzi przez Kraków i Warszawę. Odległość
+z Krakowa do Warszawy wynosi 300 km. Pan Kowalski wyjechał samochodem
+ze swojego domu w Krakowie, pojechał do swego przyjaciela, który mieszka
+gdzieś przy drodze z Zakopanego do Gdańska, a następnie pojechał do War-
+szawy. Łącznie przejechał 380 km. Gdzie mieszka przyjaciel pana Kowalskiego?
+
+
+\note{
+Odległość z Krakowa do miejsca zamieszkania przyjaciela to $|x|$. Odległość z miejsca zamieszkania przyjaciela do Warszawy to $|300 - x|$. Suma tych odległości to 380 km. Rozwiążemy to równanie.
+}
+\end{frame}
+
+% ---------- FRAME 6 ----------
+\begin{frame}{Rozwiązanie zadania tekstowego}
+\[
+|x| + |300 - x| = 380
+\]
+Jedynym rozwiązaniem jest:
+\[
+x = -40 \quad \text{lub} \quad x = 340.
+\]
+
+Możliwe miejsca:
+\begin{itemize}
+\item 40 km od Krakowa w stronę Zakopanego,
+\item 340 km od Krakowa w stronę Gdańska.
+\end{itemize}
+\end{frame}
+
+% ---------- FRAME 7 ----------
+\begin{frame}{Figura $|x| + |y| = 1$ a okrąg}
+\[
+|x| + |y| = 1
+\]
+opisuje romb o wierzchołkach:
+\[
+(1,0), (-1,0), (0,1), (0,-1)
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  \draw[->] (-1.4,0) -- (1.4,0) node[right] {$x$};
+  \draw[->] (0,-1.4) -- (0,1.4) node[above] {$y$};
+  \draw[blue, thick] (0,0) circle (1cm);
+  \draw[red, thick, rounded corners=1pt] (1,0) -- (0,1) -- (-1,0) -- (0,-1) -- cycle;
+  \foreach \p in {(1,0),(0,1),(-1,0),(0,-1)}
+    \filldraw \p circle (1.2pt);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+% ---------- FRAME 8 ----------
+\begin{frame}
+Równanie $|x| + |y| = 1$ to okrąg w \textbf{metryce taksówkowej}.
+\end{frame}
+
+\end{document}
