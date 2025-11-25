@@ -31,6 +31,7 @@
 \date{}
 
 \begin{document}
+\setbeamerfont{note page}{size=\large}
 
 % ---------- TITLE SLIDE ----------
 \begin{frame}
@@ -52,7 +53,7 @@ Interpretacja geometryczna:
 \begin{center}
 \begin{tikzpicture}[scale=1.2, every node/.style={font=\normalsize}]
   % Number line with arrow
-  \draw[-{Latex[length=3mm]}, line width=1.2pt] (-5.5,0) -- (5.5,0);
+  \draw[-{Latex[length=3mm]}, line width=1.2pt] (-5.5,0) -- (4.8,0);
   
   % Tick marks and labels
   \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}{
@@ -76,9 +77,9 @@ Interpretacja geometryczna:
     node[midway, below=4pt, fill=white, inner sep=2pt] {$|-x|=3$};
   
   % Decorative brace
-  \draw[decorate, decoration={brace, amplitude=8pt, mirror}, line width=1pt]
+  \draw[decorate, decoration={brace, amplitude=8pt}, line width=1pt]
     (0,1.2) -- (3,1.2) node[midway, above=10pt] {\textbf{odległość od 0}};
-  \draw[decorate, decoration={brace, amplitude=8pt, mirror}, line width=1pt]
+  \draw[decorate, decoration={brace, amplitude=8pt}, line width=1pt]
     (-3,1.2) -- (0,1.2) node[midway, above=10pt] {\textbf{odległość od 0}};
 \end{tikzpicture}
 \end{center}
@@ -196,8 +197,22 @@ Możliwe miejsca:
 \item 340 km od Krakowa w stronę Gdańska.
 \end{itemize}
 \end{frame}
-
 % ---------- FRAME 7 ----------
+\begin{frame}{Rozwiązywanie równań kwadratowych bez delty}
+\[
+x^2-2x-3=0
+\]
+Można zapisać:
+\[
+(x-1)^2 - 4 = 0
+\]
+
+Dalej:
+\[
+(x-1)^2 = 4
+\]
+\end{frame}
+% ---------- FRAME 8 ----------
 \begin{frame}{Figura $|x| + |y| = 1$ a okrąg}
 \[
 |x| + |y| = 1

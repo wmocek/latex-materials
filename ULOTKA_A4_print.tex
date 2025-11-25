@@ -1,0 +1,136 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{geometry}
+\geometry{left=0cm, right=0cm, top=0cm, bottom=0cm}
+\usepackage{qrcode}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\usepackage{enumitem}
+\usepackage{rotating}
+
+% Define colors
+\definecolor{mathblue}{RGB}{41, 128, 185}
+\definecolor{mathgreen}{RGB}{39, 174, 96}
+\definecolor{darkgray}{RGB}{52, 73, 94}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Command for one leaflet (A5 size rotated: 14.85cm x 21cm)
+\newcommand{\leaflet}{%
+\rotatebox{90}{%
+\begin{minipage}[c][21cm][c]{14.85cm}
+\centering
+\vspace{0.8cm}
+
+% Header with logo and title
+\begin{center}
+    \begin{tikzpicture}
+        \node[circle, draw=mathblue, line width=1.5pt, minimum size=2cm] at (0,0) {
+            \includegraphics[width=1.6cm]{muscle_icon.jpg}
+        };
+    \end{tikzpicture}
+    
+    \vspace{0.15cm}
+    
+    {\LARGE \textbf{\textcolor{mathblue}{Siłka z Matmy}}} \\[0.15cm]
+    {\small \textcolor{darkgray}{Profesjonalne korepetycje z matematyki}}
+    
+    \vspace{0.1cm}
+    \textcolor{mathblue}{\rule{0.8\textwidth}{1.5pt}}
+\end{center}
+
+\vspace{0.15cm}
+
+% About me
+\begin{center}
+\begin{minipage}{0.88\textwidth}
+    \small
+    Nazywam się \textbf{Wojciech Mocek} i od ponad 32 lat pomagam uczniom odkrywać piękno matematyki. Uczyłem na uczelniach w USA (Georgia Tech, Emory) i w Polsce. Każdy może zrozumieć matematykę - wystarczy odpowiednie podejście i cierpliwość.
+\end{minipage}
+\end{center}
+
+\vspace{0.15cm}
+
+% Features in a box
+\begin{center}
+\colorbox{mathblue!10}{
+\begin{minipage}{0.88\textwidth}
+    \vspace{0.15cm}
+    \small
+    \begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+        \item \textbf{Zakres:} szkoła podstawowa -- studia
+        \item \textbf{Format:} online i Rybnik stacjonarnie
+        \item \textbf{Języki:} polski i angielski
+        \item \textbf{Egzaminy:} Matura, SAT, AP, IB
+    \end{itemize}
+    \vspace{0.15cm}
+\end{minipage}
+}
+\end{center}
+
+\vspace{0.2cm}
+
+% Testimonial
+\begin{center}
+\colorbox{mathgreen!15}{
+\begin{minipage}{0.88\textwidth}
+    \vspace{0.1cm}
+    \small \textit{,,Pan Wojciech genialnie tłumaczy - wreszcie rozumiem, o co chodzi! Matura zdana z wynikiem, o którym nie śmiałam marzyć.''} \hfill \textbf{--- Ania}
+    \vspace{0.1cm}
+\end{minipage}
+}
+\end{center}
+
+\vspace{0.15cm}
+
+% Contact section with QR code
+\begin{center}
+    {\large \textbf{\textcolor{mathblue}{Zarezerwuj swoją lekcję!}}}
+    
+    \vspace{0.2cm}
+    
+    \begin{minipage}{0.38\textwidth}
+        \centering
+        \qrcode[height=2.5cm]{https://www.silkazmatmy.pl}
+        
+        \vspace{0.05cm}
+        {\footnotesize \textcolor{darkgray}{Zeskanuj kod}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.42\textwidth}
+        \centering
+        
+        {\normalsize \faPhone} \\[0.05cm]
+        {\large \textbf{+48 667 295 982}} \\[0.2cm]
+        
+        {\normalsize \faGlobe} \\[0.05cm]
+        {\footnotesize \texttt{silkazmatmy.pl}} \\[0.2cm]
+        
+        {\normalsize \faEnvelope} \\[0.05cm]
+        {\footnotesize \texttt{mocek.w@gmail.com}}
+    \end{minipage}
+\end{center}
+
+\vspace{0.1cm}
+
+\begin{center}
+    \textcolor{mathgreen}{\rule{0.8\textwidth}{1pt}} \\[0.15cm]
+    {\small \textcolor{darkgray}{\textit{Pierwsza lekcja 45 minut - sprawdź, czy moje lekcje Ci odpowiadają!}}}
+\end{center}
+
+\end{minipage}%
+}%
+}
+
+\begin{document}
+
+% Two A5 leaflets rotated 90° side by side on portrait A4 (21cm x 29.7cm)
+\noindent\leaflet\hfill\leaflet
+
+\end{document}

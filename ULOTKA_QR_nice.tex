@@ -1,0 +1,133 @@
+\documentclass[a5paper,10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{geometry}
+\geometry{left=0.6cm, right=0.6cm, top=0.6cm, bottom=0.6cm}
+\usepackage{qrcode}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\usepackage{enumitem}
+
+% Define colors
+\definecolor{mathblue}{RGB}{41, 128, 185}
+\definecolor{mathgreen}{RGB}{39, 174, 96}
+\definecolor{darkgray}{RGB}{52, 73, 94}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% Header with logo and title
+\begin{center}
+    \begin{tikzpicture}
+        \node[circle, draw=mathblue, line width=1.5pt, minimum size=2cm] at (0,0) {
+            \includegraphics[width=1.6cm]{muscle_icon.jpg}
+        };
+    \end{tikzpicture}
+    
+    \vspace{0.05cm}
+    
+    {\huge \textbf{\textcolor{mathblue}{Siłka z Matmy}}} \\[0.05cm]
+    {\large \textcolor{darkgray}{Profesjonalne korepetycje z matematyki}}
+    
+    \vspace{0.04cm}
+    \textcolor{mathblue}{\rule{0.85\textwidth}{1.5pt}}
+\end{center}
+
+\vspace{0.05cm}
+
+% About me
+\begin{center}
+\begin{minipage}{0.94\textwidth}
+    \large
+    Nazywam się \textbf{Wojciech Mocek} i od ponad 20 lat pomagam uczniom odkrywać piękno matematyki. Pracowałem na uczelniach polskich (Politechnika Śląska i Uniwersytet Śląski) i amerykańskich (Georgia Tech, Emory). Każdy może zrozumieć matematykę - wystarczy odpowiednie podejście i cierpliwość.
+\end{minipage}
+\end{center}
+
+\vspace{0.05cm}
+
+% Features in a box
+\begin{center}
+\colorbox{mathblue!10}{
+\begin{minipage}{0.94\textwidth}
+    \vspace{0.04cm}
+    \large
+    \begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+        \item \textbf{Zakres:} szkoła podstawowa, liceum, studia oraz olimpijczycy.
+        \item \textbf{Format:} online i stacjonarnie w Rybniku 
+        \item \textbf{Języki:} polski i angielski
+        \item \textbf{Egzaminy:} Matura, Egzamin ósmoklasisty, SAT, AP, IB
+    \end{itemize}
+    \vspace{0.04cm}
+\end{minipage}
+}
+\end{center}
+
+\vspace{0.05cm}
+
+% Testimonials
+\begin{center}
+\colorbox{mathgreen!15}{
+\begin{minipage}{0.94\textwidth}
+    \vspace{0.04cm}
+    \large \textit{,,Bardzo duże zaangażowanie w każdą lekcje, znakomite metody nauczania oraz ogromna cierpliwość do ucznia, lekcje umożliwiają osiągnięcie wymarzonych wyników.''} \hfill \textbf{--- Stanisław}
+    \vspace{0.04cm}
+\end{minipage}
+}
+\end{center}
+
+\vspace{0.02cm}
+
+\begin{center}
+\colorbox{mathgreen!15}{
+\begin{minipage}{0.94\textwidth}
+    \vspace{0.04cm}
+    \large \textit{,,Bardzo duża łatwość w przekazywaniu wiedzy i mega podejście do ucznia. Serdecznie polecam wszystkim, którzy mają kłopoty z królową nauk!''} \hfill \textbf{--- Jakub}
+    \vspace{0.04cm}
+\end{minipage}
+}
+\end{center}
+
+\vspace{0.05cm}
+
+% Contact section with QR code
+\begin{center}
+    {\Large \textbf{\textcolor{mathblue}{Zarezerwuj swoją lekcję!}}}
+    
+    \vspace{0.05cm}
+    
+    \begin{minipage}{0.42\textwidth}
+        \centering
+        \qrcode[height=2.5cm]{https://www.silkazmatmy.pl}
+        
+        \vspace{0.02cm}
+        {\large \textcolor{darkgray}{Zeskanuj kod}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        
+        {\Large \faPhone} \\[0.01cm]
+        {\LARGE \textbf{+48 667 295 982}} \\[0.05cm]
+        
+        {\Large \faGlobe} \\[0.01cm]
+        {\large \texttt{silkazmatmy.pl}} \\[0.05cm]
+        
+        {\Large \faEnvelope} \\[0.01cm]
+        {\large \texttt{mocek.w@gmail.com}}
+    \end{minipage}
+\end{center}
+
+\vspace{0.05cm}
+
+\begin{center}
+    \textcolor{mathgreen}{\rule{0.85\textwidth}{1.5pt}} \\[0.04cm]
+    {\large \textcolor{darkgray}{\textit{Lekcje trawją 45 minut - zamów sowją pierwszą \\i sprawdź jak nam się razem pracuje!}}}
+\end{center}
+
+\end{document}
