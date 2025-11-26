@@ -1,0 +1,22 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.synctex.gz
+*.pdf
+# minted and other build folders
+_minted-*/
+# OS files
+.DS_Store
+# temporary files
+*~
+# latexmk status files
+*.synctex
