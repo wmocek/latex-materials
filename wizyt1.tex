@@ -1,0 +1,79 @@
+%
+% ticket.sty example file for visiting cards
+%
+%%%%
+% use the corresponding paper size for your ticket definition
+\documentclass[a4paper,10pt]{letter}
+
+% load ticket.sty with the appropriate ticket definition
+\usepackage[zw32010,emptycrossmark]{ticket}
+% \usepackage[tdf-file,other options]{ticket}
+% check in tdf directory the zw32010.tdf file:
+% it is the definition of a ticket (margin, number, size)
+% in this case a standard business card type
+%
+% emptycrossmark is:
+% A crossmark where the part of the cross inside the ticket is not visible
+% other choices are: crossmark, circlemark, emptycrossmark, cutmark, boxed
+
+% load misc stuff
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{marvosym}
+% Allow the use of symbols (mobile phone, email, etc.)
+
+% define something
+\definecolor{uni}{rgb}{.3019,.7216,.7019}
+
+% make your default ticket. \ticketdefault is somewhat like a background
+% here it is empty, because we use different tickets for the front an
+% the back of our card
+\renewcommand{\ticketdefault}{%
+}
+
+% now what do you like to put in your ticket
+% \put(X,Y)
+% the coordinate system starts from the left bottom corner
+\newcommand{\vcardfront}[5]{\ticket{%
+    \put( 60, -1){\includegraphics[width=45mm,angle=90,origin=bl]{images/silka.jpg}}
+    \put( 14, 12){\includegraphics[width=40mm,angle=90,origin=bl]{images/silka.jpg}}
+    \put( 5, 12){\color{uni}\line(1,0){56}}
+    \put( 11, 12.5){\Large Rainnic in the Clouds}
+    \put( 7,9.0){\footnotesize \textit{Working from scratch, following simplicity}}
+    \put( 15,  3){{\Large\ComputerMouse} \small rainnic.altervista.org}
+    \put( 7.5, 24){{\Large\Mobilefone} \small}
+    \put( 7, 20){{\Large\Letter} \small}
+    \put(6,40){\bfseries\LARGE #1}
+    \put(7,36){#2}
+    \put(15,24){\small #3}
+    \put(15,20){\small #4}
+    \put( 7,16){\small #5}
+ }}
+
+\newcommand{\vcardback}[1]{\ticket{%
+    \put( 7, 26){\small private:}
+    \put( 5, 23){\color{uni}\line(1,0){56}}
+    \put( 7,19){\small%
+        \begin{minipage}[t]{50mm}%
+          {#1}\hss%
+        \end{minipage}}%
+}}
+
+% a counter, which makes life easier...
+\newcounter{numcards}
+
+\begin{document}
+\sffamily
+
+% ten cards for the front
+\whiledo{\thenumcards<10}{%
+  \stepcounter{numcards}%
+  \vcardfront{$\quad \quad \quad \; \;$ Nicola Rainiero}{$\quad \quad \quad \quad \quad \quad \; \,$ Civil Engineer -- IT Enthusiast}{+44 (0)XXXX XXXXXX}{my.email@service.it}{}}
+
+\setcounter{numcards}{0}
+
+% and ten for the backside
+%\whiledo{\thenumcards<10}{%
+%  \stepcounter{numcards}%
+%  \vcardback{phone: ---/HH HH HHH\\fax: ---/HH HH HHH\\homestreet 7\\everywhere}}
+\end{document}

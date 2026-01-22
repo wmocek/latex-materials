@@ -1,94 +1,63 @@
-% Business cards for Wojciech Mocek
-% Created from template provided by the user
-
 \documentclass[11pt,a4paper]{memoir}
 
-% --- page/card dimensions --------------------------------------------------
-\setstocksize{55mm}{85mm} % single card stock size (55 x 85 mm)
+\setstocksize{55mm}{85mm} % UK Stock size
 \setpagecc{55mm}{85mm}{*}
 \settypeblocksize{45mm}{75mm}{*}
 \setulmargins{5mm}{*}{*}
 \setlrmargins{5mm}{*}{*}
-
 \usepackage{xcolor}
-\usepackage{setspace}
-\usepackage{fontspec}
-\setmainfont[]{EBGaramond12-Regular.ttf}
 
 \setheadfoot{0.1pt}{0.1pt}
 \setheaderspaces{1pt}{*}{*}
+\usepackage{fontspec}
+\setmainfont[]{EBGaramond12-Regular.ttf} 
+
 \checkandfixthelayout[fixed]
+
 \pagestyle{empty}
 
-% PSTricks + QR / barcode support
 \usepackage{pstricks}
 \usepackage{auto-pst-pdf,pst-barcode}
 
-% small helper for safe printable monospaced fingerprint
-\newcommand{\fingerprint}[1]{\texttt{\fontsize{2.84mm}{3.55mm}\selectfont #1}}
-
-% --- personal details (detected in repo) ----------------------------------
-% Please review and edit below if any value is incorrect or you want changes.
-\newcommand{\BCname}{Wojciech Mocek}
-\newcommand{\BCtitle}{Private Mathematics Tutor}
-\newcommand{\BCorg}{Silka z Matmy}
-\newcommand{\BCsite}{https://www.silkazmatmy.pl}
-\newcommand{\BCemail}{mocek.w@gmail.com}
-\newcommand{\BCphone}{+48 667 295 982}
-\newcommand{\BClinkedin}{https://linkedin.com/in/wmocek}
-\newcommand{\BCgpg}{% leave empty if you don't want to show
-  % example: 425B 030A B8D2 0316 CA1B 4709 CA83 5DDA EC31 CA56
-}
-
 \begin{document}
+    \begin{Spacing}{0.75}%
+    \noindent
+    \textbf{Helena Doe}\\
+    \tiny subtitle \hfill {\color{gray}Division / Employer}\\ 
+    \rule{74mm}{.3mm}\\
+    \begin{minipage}[t]{33mm}
+        \vspace{-0mm}%
+        \begin{pspicture}(25mm,25mm)
+            % The MECARD format is used to exchange contact information. More information at:
+            % http://www.nttdocomo.co.jp/english/service/imode/make/content/barcode/function/application/addressbook/index.html
+\psbarcode{MECARD:N:Last name, First Name;URL:https://fqdn;EMAIL:helena@univ.edu;NOTE:GPG: ;;}{eclevel=L width=1 height=1}{qrcode}
 
-% One card per page (for single-sided test prints).  You can later arrange
-% multiple cards per A4 sheet using print software or an A4 template.
-
-\begin{Spacing}{0.85}
-  \noindent
-  {\large\textbf{\BCname}}\\
-  {\small \BCtitle \hfill {\color{gray}\BCorg}}\\
-  \rule{74mm}{.3mm}\\[1mm]
-
-  \begin{minipage}[t]{33mm}
-    \vspace{0mm}
-    \begin{pspicture}(25mm,25mm)
-      % MECARD QR for quick import into phone address book
-      % include name, phone, url, email and LinkedIn in NOTE
-      \psbarcode{MECARD:N:Mocek, Wojciech;TEL:+48667295982;URL:\BCsite;EMAIL:\BCemail;NOTE:LinkedIn:\BClinkedin;;}{eclevel=L width=1 height=1}{qrcode}
-    \end{pspicture}
-  \end{minipage}\hspace{1mm}
-
-  \begin{minipage}[t]{42mm}
-    \vspace{0mm}
-    \begin{flushleft}
-      {\scriptsize
-        \begin{Spacing}{0.95}
-          {\textbf{\BCtitle}}\\
-          \hspace{5mm}Matura, tutoring, exam prep\\
-          \hspace{5mm}University math & problem solving\\
-          \hspace{5mm}Online and in-person sessions\\[2mm]
-        \end{Spacing}
-      }
-      {\tiny
-        \begin{tabular}{rl}
-          {\color{gray}web} & \BCsite\\
-          {\color{gray}email} & \texttt{\BCemail}\\
-          {\color{gray}mobile} & \BCphone\\
-          {\color{gray}linkedin} & \BClinkedin\\
-        \end{tabular}\vspace*{2mm}
-      }
-    \end{flushleft}
-  \end{minipage}
-
-  \rule{74mm}{0mm}\\[1mm]
-  % Fingerprint / key (optional) -- leave blank if you don't want to print it.
-  \ifx\BCgpg\empty
-    % no GPG printed
-  \else
-    \fingerprint{\BCgpg}
-  \fi
-
-\end{Spacing}
+        \end{pspicture}
+    \end{minipage}
+    \hspace{1mm}
+    \begin{minipage}[t]{42mm}
+        \vspace{-0mm}%
+        \begin{flushleft}
+        {\scriptsize
+            \begin{Spacing}{1}%
+            \textbf{Job Title}\\
+            \hspace{5mm}Speciality 1\\
+            \hspace{5mm}Speciality 2\\
+            \hspace{5mm}Speciality 3 \vspace{2mm}\\
+            \end{Spacing}
+        }
+        {\tiny
+        	\begin{tabular}{rl}
+            	{\color{gray}web} & https://fqdn/\\
+            	{\color{gray}email} & helena@univ.edu\\
+            	{\color{gray}email} & hxr42@gmail.com\\
+            	{\color{gray}mobile} & +1 123 456 7890\\
+            \end{tabular}
+            \vspace*{2mm}
+        }
+        \end{flushleft}
+    \end{minipage}
+    \rule{74mm}{0mm}\\
+    \texttt{\fontsize{2.84mm}{3.55mm}\selectfont 425B 030A B8D2 0316 CA1B 4709 CA83 5DDA EC31 CA56} % GPG KEY ID
+    \end{Spacing}
 \end{document}
